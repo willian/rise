@@ -13,19 +13,37 @@ import {
 
 import LongDescription from './LongDescription'
 
-const BackCardWithDescription = ({ description, flipped }) => (
-  <CardBack flipped={flipped}>{description}</CardBack>
-)
+const renderBackWithDescription = (description, flipped, type) => {
+  if (type === 'description') {
+    return (
+      <CardBack flipped={flipped}>{description}</CardBack>
+    )
+  }
 
-const BackCardWithFullImage = ({ flipped, fullImage }) => (
-  <CardBack flipped={flipped} fullImage={fullImage} />
-)
+  return null
+}
 
-const BackCardWithLongDescription = ({ description, flipped }) => (
-  <CardBack flipped={flipped}>
-    <LongDescription>{description}</LongDescription>
-  </CardBack>
-)
+const renderBackWithFullImage = (flipped, fullImage, type) => {
+  if (type === 'fullimage') {
+    return (
+      <CardBack flipped={flipped} fullImage={fullImage} />
+    )
+  }
+
+  return null
+}
+
+const renderBackWithLongDescription = (description, flipped, type) => {
+  if (!type) {
+    return (
+      <CardBack flipped={flipped}>
+        <LongDescription>{description}</LongDescription>
+      </CardBack>
+    )
+  }
+
+  return null
+}
 
 const Flashcard = ({
   card,
@@ -44,24 +62,9 @@ const Flashcard = ({
           {card.front.description}
           {showTip && <CardTip>{labels.blocksClickToFlip}</CardTip>}
         </CardFront>
-        {card.back.type === 'description' && (
-          <BackCardWithDescription
-            flipped={flipped}
-            description={card.back.description}
-          />
-        )}
-        {card.back.type === 'fullimage' && (
-          <BackCardWithFullImage
-            flipped={flipped}
-            fullImage={card.back.media.image.src}
-          />
-        )}
-        {!card.back.type && (
-          <BackCardWithLongDescription
-            flipped={flipped}
-            description={card.back.description}
-          />
-        )}
+        {renderBackWithDescription(card.back.description, flipped, card.back.type)}
+        {renderBackWithFullImage(flipped, card.back.media.image.src, card.back.type)}
+        {renderBackWithLongDescription(card.back.description, flipped, card.back.type)}
       </Card>
     </FlashcardWrapper>
   </FlashcardContainer>
