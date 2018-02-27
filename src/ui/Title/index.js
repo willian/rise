@@ -9,7 +9,8 @@ const Title = glamorous.h2({
   fontWeight: '700',
   lineHeight: '40px',
   margin: 0,
-  verticalAlign: 'baseline'
+  verticalAlign: 'baseline',
+  width: '100%'
 })
 
 export default Title

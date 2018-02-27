@@ -1,0 +1,11 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  font-size: 62.5%;
+}
+
+body {
+  border: 0;
+  color: #363539;
+  font-family: 'Lato';
+  font-size: 1.6em;
+}

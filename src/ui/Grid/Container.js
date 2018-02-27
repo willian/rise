@@ -73,10 +73,11 @@ const Container = glamorous.div(
       width: '1140px'
     }
   },
-  ({ direction, justify, align }) => ({
+  ({ direction, justify, align, wrap }) => ({
     alignItems: getAlignItems(align),
     flexDirection: getFlexDirection(direction),
-    justifyContent: getJustifyContent(justify)
+    justifyContent: getJustifyContent(justify),
+    flexWrap: wrap ? 'wrap' : 'no-wrap'
   })
 )
 
