@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { compose, pure, withStateHandlers } from 'recompose'
 
 import {
@@ -12,8 +13,25 @@ import {
 
 import LongDescription from './LongDescription'
 
+const BackCardWithDescription = ({ description, flipped }) => (
+  <CardBack flipped={flipped}>{description}</CardBack>
+)
+
+const BackCardWithFullImage = ({ flipped, fullImage }) => (
+  <CardBack flipped={flipped} fullImage={fullImage} />
+)
+
+const BackCardWithLongDescription = ({ description, flipped }) => (
+  <CardBack flipped={flipped}>
+    <LongDescription>{description}</LongDescription>
+  </CardBack>
+)
+
 const Flashcard = ({
+  card,
+  color,
   flipped,
+  labels,
   longDescEl,
   setLongDescEl,
   showTip,
@@ -22,19 +40,50 @@ const Flashcard = ({
   <FlashcardContainer flipped={flipped} onClick={toggle} small>
     <FlashcardWrapper>
       <Card>
-        <CardFront flipped={flipped} borderColor='#747a7e'>
-          Front of card 1
-          {showTip && <CardTip>Click to flip</CardTip>}
+        <CardFront flipped={flipped} borderColor={color}>
+          {card.front.description}
+          {showTip && <CardTip>{labels.blocksClickToFlip}</CardTip>}
         </CardFront>
-        <CardBack flipped={flipped}>
-          <LongDescription>
-            Café au lait crema so cup est single shot acerbic. Saucer as, black crema organic single origin mocha. Half and half as iced caffeine robusta wings instant. Caramelization brewed con panna, aftertaste, seasonal, froth and, a medium ristretto caramelization caffeine. Mocha crema, lungo, bar, roast in coffee that latte as grinder latte. Cortado, acerbic, grounds coffee doppio brewed sweet. Id, plunger pot single shot, filter, galão spoon blue mountain aged beans. As whipped et chicory aftertaste java robusta est half and half.
-          </LongDescription>
-        </CardBack>
+        {card.back.type === 'description' && (
+          <BackCardWithDescription
+            flipped={flipped}
+            description={card.back.description}
+          />
+        )}
+        {card.back.type === 'fullimage' && (
+          <BackCardWithFullImage
+            flipped={flipped}
+            fullImage={card.back.media.image.src}
+          />
+        )}
+        {!card.back.type && (
+          <BackCardWithLongDescription
+            flipped={flipped}
+            description={card.back.description}
+          />
+        )}
       </Card>
     </FlashcardWrapper>
   </FlashcardContainer>
 )
+
+Flashcard.propTypes = {
+  card: PropTypes.shape({
+    back: PropTypes.shape({}),
+    front: PropTypes.shape({}),
+    id: PropTypes.number
+  }).isRequired,
+  flipped: PropTypes.bool.isRequired,
+  toggle: PropTypes.func.isRequired,
+  color: PropTypes.string,
+  labels: PropTypes.shape({}),
+  showTip: PropTypes.bool
+}
+
+Flashcard.defaultProps = {
+  labels: {},
+  showTip: false
+}
 
 const enhance = compose(
   pure,

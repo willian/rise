@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
 import {
   compose,
   lifecycle,
@@ -14,6 +15,11 @@ const LongDescription = ({ children, setElement, hasBottomEffect }) => (
     <div ref={(el) => setElement(el)}>{children}</div>
   </LongDescriptionScrolling>
 )
+
+LongDescription.propTypes = {
+  hasBottomEffect: PropTypes.bool.isRequired,
+  setElement: PropTypes.func.isRequired
+}
 
 const enhance = compose(
   pure,

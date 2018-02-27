@@ -1,0 +1,93 @@
+
+{
+  "color": "#747a7e",
+  "items": [
+    {
+      "id": 10,
+      "back": {
+        "type": "description",
+        "media": {
+          "image": {
+            "key": "assets/rise/assets/block-defaults/mountains.jpg",
+            "src": "https://cdn.articulate.com/assets/rise/assets/block-defaults/mountains.jpg",
+            "thumbnail": "https://cdn.articulate.com/assets/rise/assets/block-defaults/mountains_thumb.jpg",
+            "originalUrl": "mountains.jpg"
+          }
+        },
+        "description": "Back of card 1"
+      },
+      "front": {
+        "type": "description",
+        "media": {
+          "image": {
+            "key": "assets/rise/assets/block-defaults/mountains.jpg",
+            "src": "https://cdn.articulate.com/assets/rise/assets/block-defaults/mountains.jpg",
+            "thumbnail": "https://cdn.articulate.com/assets/rise/assets/block-defaults/mountains_thumb.jpg",
+            "originalUrl": "mountains.jpg"
+          }
+        },
+        "description": "Front of card 1"
+      }
+    },
+    {
+      "id": 11,
+      "back": {
+        "type": "fullimage",
+        "media": {
+          "image": {
+            "key": "rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/55J-c_DLx5JdTJ_7.jpg",
+            "src": "https://cdn.articulate.com/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/55J-c_DLx5JdTJ_7.jpg",
+            "error": null,
+            "thumbnail": "https://images.articulate.com/f:jpg,b:fff,w:100,h:100,s:cover/rise/courses/FtHG0DN2jjp0KHxN/owv03__8NbauCxoK-kui-9-qlo-l-6-i-brigitte-tohm.jpg",
+            "originalUrl": "kui9qlo-l6i-brigitte-tohm.jpg",
+            "isProcessing": false,
+            "uploadProgress": 0
+          }
+        },
+        "description": "Back of card 2"
+      },
+      "front": {
+        "type": "description",
+        "media": {
+          "image": {
+            "key": "assets/rise/assets/block-defaults/mountains.jpg",
+            "src": "https://cdn.articulate.com/assets/rise/assets/block-defaults/mountains.jpg",
+            "thumbnail": "https://cdn.articulate.com/assets/rise/assets/block-defaults/mountains_thumb.jpg",
+            "originalUrl": "mountains.jpg"
+          }
+        },
+        "description": "Front of card 2"
+      }
+    },
+    {
+      "id": 12,
+      "back": {
+        "media": {
+          "image": {
+            "key": "assets/rise/assets/block-defaults/mountains.jpg",
+            "src": "https://cdn.articulate.com/assets/rise/assets/block-defaults/mountains.jpg",
+            "thumbnail": "https://cdn.articulate.com/assets/rise/assets/block-defaults/mountains_thumb.jpg",
+            "originalUrl": "mountains.jpg"
+          }
+        },
+        "description": "Café au lait crema so cup est single shot acerbic. Saucer as, black crema organic single origin mocha. Half and half as iced caffeine robusta wings instant. Caramelization brewed con panna, aftertaste, seasonal, froth and, a medium ristretto caramelization caffeine.\n\nMocha crema, lungo, bar, roast in coffee that latte as grinder latte. Cortado, acerbic, grounds coffee doppio brewed sweet. Id, plunger pot single shot, filter, galão spoon blue mountain aged beans. As whipped et chicory aftertaste java robusta est half and half."
+      },
+      "front": {
+        "type": "description",
+        "media": {
+          "image": {
+            "key": "assets/rise/assets/block-defaults/mountains.jpg",
+            "src": "https://cdn.articulate.com/assets/rise/assets/block-defaults/mountains.jpg",
+            "thumbnail": "https://cdn.articulate.com/assets/rise/assets/block-defaults/mountains_thumb.jpg",
+            "originalUrl": "mountains.jpg"
+          }
+        },
+        "description": "Front of card 3"
+      },
+      "isNewlyInserted": false
+    }
+  ],
+  "labels": {
+    "blocksClickToFlip": "Click to flip"
+  }
+}
